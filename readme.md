@@ -13,6 +13,8 @@
 
 今回は`kdenlive`のみを扱いますが、基本的に他のアプリケーションの場合も手順は一緒なので、個々にその方法を記しておきます。
 
+![](assets/eye-catch.png)
+
 ## `snap`と`flatpak`の設定ファイル
 `snap`版の場合、`~/snap/kdenlive/current/`ディレクトリ以下。
 - `~/snap/kdenlive/current/.config/kdenlive-snaprc`
@@ -121,5 +123,18 @@ tree -L 2
 1 directory, 8 files
 ```
 
+## 問題点
+`~/.var/app/org.kde.kdenlive/`ディレクトリに`.local/share/`ディレクトリが存在しませんでした。
+そこでディレクトリを作成し、以下のフォルダを`snap`版の`kdenlive`のディレクトリからコピーしました。
+- effects
+- speechmodels
+- effect-templates
+- lumas
 
+しかしながら、`flatpak`版の`kdenlive`を起動したとき、反映されたお気に入りエフェクトはわずかで、カスタムエフェクトに至ってはひとつも反映されませんでした。
+また、`speechmodels`もそのままでは反映されませんでした。
+
+要確認
+- snap, flatpakのそれぞれのkdenliveのバージョン
+- 
 
